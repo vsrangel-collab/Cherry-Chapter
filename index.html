@@ -55,34 +55,164 @@
 </main>
 
 <!--========= SECCIÓN DEL HERO ========-->
-  <section id="inicio" class="hero">
-      <div class="container hero-inicio">
-        <div class="hero-text">
-          <p class="eyebrow">Detalles que hacen sonreír</p>
-          <h1>Tu negocio merece estar en Internet</h1>
-          <p class="lead">Promociona tus productos, recibe pedidos y haz que tus clientes te encuentren desde cualquier lugar.</p>
-
-
-          <div class="hero-actions">
-            <a href="#productos" class="btn primary">Ver productos</a>
-            <button type="button" class="btn outline" onclick="openWhatsApp('Hola, vi su página y me gustaría conocer sus regalos personalizados.')">Comprar por WhatsApp</button>
-          </div>
-
-
-          <p class="trust"><i data-lucide="heart"></i> Más de 200 detalles entregados</p>
-        </div>
-
-
-        <div class="hero-imagen">
-          <img src="XXX" alt="XXXXX">
-          <span class="tag tag-love">Hecho con cariño</span>
-          <span class="tag tag-custom">Pedidos personalizados</span>
-        </div>
-      </div>
+<section class="intro" aria-labelledby="intro-title">
+      <p class="intro-eyebrow">BIENVENIDOS A CHERRY CHAPTER</p>
+      <h1 class="intro-title" id="intro-title">CONECTANDO.<br><span>CON USTEDES CHERRYSITAS.</span></h1>
+      <p class="intro-description">Un rinconcito donde los libros, el K-pop y los pequeños detalles se convierten en cosas especiales..</p>
     </section>
 
 
+      <!-- Galería principal: 3 imágenes -->
+    <section class="gallery" id="galeria" aria-label="Galería principal">
 
+
+      <!-- VIDEO -->
+      <article class="media-card media-cardvideo" data-video-card>
+        <!-- Sustituye el archivo de video por el tuyo. Se recomienda MP4  -->
+        <video
+          class="media-card media-card-video"
+          data-hover-video
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="img/merch 6.webp"
+          aria-label="Video de presentación">
+          <source src="img/merch 5.avif" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+
+
+        <!-- Capa oscura que permite leer el texto sobre el video -->
+        <div class="media-card__shade" aria-hidden="true"></div>
+
+
+        <!-- Texto que aparece sobre el panel -->
+        <div class="media-card__content">
+          <p class="media-card__number"> PRESENTACIÓN CHERRY CHAPTER</p>
+          <h2 class="media-card__title">MÁS ALLÁ<br>DE LA BANCARROTA</h2>
+          <a class="media-card__link" href="#contacto">Ver más<span aria-hidden="true">↗</span></a>
+        </div>
+
+
+        <!-- Control visible en pantallas táctiles y accesible con teclado -->
+        <button class="video-toggle" type="button" data-video-toggle aria-label="Reproducir video" aria-pressed="false">
+          <span class="video-toggle__icon" data-toggle-icon aria-hidden="true">▶</span>
+          <span class="video-toggle__text" data-toggle-text>Reproducir video</span>
+        </button>
+      </article>
+
+
+      <!--  IMAGEN 1-->
+      <article class="media-card">
+        <!-- Reemplaza trayectoria.jpg holders personalizados. -->
+        <img
+          class="media-card__media media-card__image"
+          src="img/merch 7.webp"
+          alt="Fotografía que representa los holders"
+          loading="lazy">
+
+
+        <div class="media-card__shade" aria-hidden="true"></div>
+
+
+        <div class="media-card__content">
+          <p class="media-card__number">02 / VIEW HIGTHLIGTHS</p>
+          <h2 class="media-card__title">SOBRE CHERRY<br>CHAPTER</h2>
+          <a class="media-card__link" href="#contacto">Conocer más <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+
+      <!--  IMAGEN 2-->
+      <article class="media-card">
+        <!-- Reemplaza proyectos.jpg por el nombre de tu fotografía. -->
+        <img
+          class="media-card__media media-card__image"
+          src="img/merch 5.avif"
+          alt="Fotografía de ligthsticks personalizados"
+          loading="lazy">
+
+
+        <div class="media-card__shade" aria-hidden="true"></div>
+
+
+        <div class="media-card__content">
+          <p class="media-card__number">03 / PROYECTOS</p>
+          <h2 class="media-card__title">IDEAS QUE<br>INSPIRAN</h2>
+          <a class="media-card__link" href="#contacto">Ver proyectos <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+
+    </section> <!-- FIN DEL HERO-->
+
+    <!-- SECCIÓN DE PRODUCTOS O SERVICIOS-->
+     <section id="productos" class="products">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Merch con proposito</p>
+          <h2>Conoce nuestros productos</h2>
+          <p class="lead">Elige un detalle especial y hazlo único.</p>
+        </div>
+
+
+        <!-- SERVICIO 1- TARJETA-->
+
+<div class="product-grid">
+          <article class="product-card reveal">
+            <img src="img/MERCH 8.jpeg" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag">Producto mas vendido</span>
+              <h3>Caja kpop box</h3>
+              <p class="price">$120-180 MXN</p>
+              <p class="description">Una Cherry Kpop selection box para regalar cariño en cualquier ocasión.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
+            </div>
+          </article>
+
+           <!-- SERVICIO 2- TARJETA-->
+
+             <article class="product-card reveal">
+            <img src="img/MERCH 12.jpeg" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag">Photocards Holders y sleeves </span>
+              <h3>Holders perzonalizadas</h3>
+              <p class="price">$25-90 MXN</p>
+              <p class="description">Ideales para coleccionistas de Enhypen y otros grupos.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
+            </div>
+          </article>
+
+
+          <!-- SERVICIO 3- TARJETA-->
+
+          <article class="product-card reveal">
+            <img src="img/MERCH 20.jpeg" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag"> Cherry Surprise Bag BL </span>
+              <h3>Bag BL</h3>
+              <p class="price">$150-220 MXN</p>
+              <p class="description"> Para quienes aman leer BL. Incluye separadores, stickers, photocards y detalles inspirados en mangas favoritos.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
+            </div>
+          </article>
+
+
+
+
+          </div>
+          </div>
+        </section>
+
+
+
+  </main>
+ <!-- Footer o Pie de página -->
+  <footer class="site-footer">
+    <p>© <span id="current-year"></span> CHERRY CHAPTER. Todos los derechos reservados.</p>
+    <a href="#inicio">Volver arriba ↑</a>
+  </footer>
 
 </body>
 </html>

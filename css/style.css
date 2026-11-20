@@ -18,14 +18,16 @@ html { scroll-behavior: smooth;
 
 body {
   margin: 0;
-   font-family: "Zeyada", cursive;
+   font-family: "Nunito", sans-serif;
   color: var(--cereza);
   background: var(--rosa);
   overflow-x: hidden;
 }
 
 ul { 
-    list-style: none; margin: 0; padding: 0; 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
 
 }
 
@@ -38,7 +40,7 @@ img {
 
 
 .container { 
-    width: min(1200px, calc(100% - 2rem)); 
+    width: min(1100px, calc(100% - 2rem)); 
     margin: 0 auto; }
 
 
@@ -46,7 +48,7 @@ img {
 .header-cherrychapter {
   position: sticky;
   top: 0;
-  z-index: 120;
+  z-index: 100;
   background-color: var(--crema); /* Cambia por el color de fondo de tu marca */
   border-bottom: 1px solid #d5dce9;
 }
@@ -67,9 +69,9 @@ img {
 }
 
 .logo-cherrychapter img {
-  height: 90px;       /* Ajusta entre 100px y 200px según el diseño de tu logo */
+  height: 80px;       /* Ajusta entre 100px y 200px según el diseño de tu logo */
   width: auto;     
-  max-width: 500px; 
+  max-width: 200px; 
   object-fit: contain;
   display: block;
 }
@@ -95,8 +97,9 @@ img {
 .nav-cherrychapter a {
   text-decoration: none;
   color: #1f2937;
-  font-weight: 700;
+  font-weight: 900;
   transition: color 0.2s ease;
+  font-size: 20px;
 }
 
 
@@ -114,7 +117,7 @@ img {
   border-radius: 9999px;
   background-color: #C3D5AE; /* Ajusta al color de tu marca */
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -128,12 +131,13 @@ img {
 
 .btn.primary svg {
   width: 18px;
-  height: 20px;
+  height: 18px;
 }
 
 
 /* Ajuste básico para celulares */
 @media (max-width: 768px) {
+}
   .header-inicio {
     flex-wrap: wrap;
     padding-block: 0.75rem;
@@ -149,11 +153,466 @@ img {
 
   .nav-cherrychapter ul {
     gap: 0.85rem;
-    font-size: 10rem;
+    font-size: 0.9rem;
   }
-}
+
 
 h1, h2, h3 { 
     font-family: "Fraunces", serif; 
     color: var(--link); 
-    margin: 0; }
+    margin: 0; 
+  }
+
+  .intro {
+  padding: clamp(48px, 8vh, 90px) var(--page-gutter) 38px;
+  text-align: center;
+}
+
+
+.intro-eyebrow,
+.contact-eyebrow {
+  margin-bottom: 18px;
+  color: var(--color-muted);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+
+.intro-title {
+  font-size: clamp(38px, 6vw, 78px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -3px;
+}
+
+
+.intro-title span {
+  color: #777777;
+}
+
+
+.intro-description {
+  max-width: 520px;
+  margin: 20px auto 0;
+  color: #090909;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.gallery {
+  width: 100%;
+  padding: 0 var(--page-gutter);
+  display: grid;
+  /* El panel de video es un poco más ancho que las dos imágenes. */
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+
+/* Cada tarjeta funciona como una ventana visual. */
+.media-card {
+  min-width: 0;
+  height: clamp(440px, 65vw, 690px);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-panel);
+}
+
+
+/* Imagen o video ocupan todo el espacio de la tarjeta. */
+.media-card__media {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  /* Estado inicial: desaturado y un poco oscuro. */
+  filter: grayscale(100%) brightness(0.62) contrast(0.95);
+  transform: scale(1.015);
+  transition:
+    filter 700ms ease,
+    transform 1000ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+/* Capa gris/negra encima de la fotografía para crear el aspecto cinematográfico. */
+.media-card__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.04) 5%,
+    rgba(0, 0, 0, 0.12) 42%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+  opacity: 0.92;
+  transition: opacity 600ms ease;
+}
+
+
+/* Texto y enlaces se sitúan por encima de la capa oscura. */
+.media-card__content {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  bottom: 30px;
+  left: 24px;
+  transition: transform 500ms ease;
+}
+
+
+.media-card__number {
+  margin-bottom: 14px;
+  color: #d0d0d0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+
+.media-card__title {
+  color: #ffffff;
+  font-size: clamp(21px, 2.2vw, 35px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+
+.media-card__link {
+  width: fit-content;
+  margin-top: 22px;
+  padding-bottom: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  transition: gap 250ms ease, border-color 250ms ease;
+}
+
+
+.media-card__link:hover,
+.media-card__link:focus-visible {
+  gap: 25px;
+  border-color: #ffffff;
+}
+
+
+.media-card__link span {
+  font-size: 16px;
+  line-height: 0.8;
+}
+
+
+/* ---------------------------------------------------------
+  EFECTO HOVER: RECUPERAR COLOR Y ACERCAR LA IMAGEN
+   --------------------------------------------------------- */
+.media-card:hover .media-card__media,
+.media-card:focus-within .media-card__media,
+.media-card.is-playing .media-card__media {
+  filter: grayscale(0%) brightness(1) contrast(1);
+  transform: scale(1.07);
+}
+
+
+.media-card:hover .media-card__shade,
+.media-card:focus-within .media-card__shade,
+.media-card.is-playing .media-card__shade {
+  opacity: 0.72;
+}
+
+
+.media-card:hover .media-card__content,
+.media-card:focus-within .media-card__content {
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   BOTÓN DE REPRODUCCIÓN DEL VIDEO
+   ========================================================= */
+.video-toggle {
+  position: absolute;
+  z-index: 4;
+  top: 20px;
+  right: 20px;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+  display: none;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: background 200ms ease;
+}
+
+
+.video-toggle:hover,
+.video-toggle:focus-visible {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+
+.video-toggle__icon {
+  font-size: 10px;
+}
+
+
+.video-toggle__text {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* En equipos que no tienen hover, el botón se muestra siempre. */
+@media (hover: none), (pointer: coarse) {
+  
+  .video-toggle {
+    display: inline-flex;
+  }
+
+}
+
+
+/* También se muestra al navegar con teclado. */
+.media-card--video:focus-within .video-toggle {
+  display: inline-flex;
+}
+
+/* ---------- Productos ---------- */
+.products { background: var(--paper); }
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.product-card {
+  background: lightblue;
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(82,56,43,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+
+}
+.product-card:hover {
+   transform: translateY(-6px); 
+   box-shadow: 0 18px 34px rgba(82,56,43,.13); 
+  }
+
+.product-card img { 
+  width: 100%; aspect-ratio: 1.18 / 1; 
+  object-fit: cover; 
+}
+
+.product-body { 
+  padding: 1.25rem; 
+}
+
+.product-body h3 { 
+  font-size: 1.2rem; 
+  margin-top: .7rem; 
+}
+
+.product-body .price { 
+  color: var(--coral-dark); 
+  font-weight: 700; 
+  margin-top: .2rem; 
+}
+
+.product-body .description { 
+  color: var(--muted); 
+  margin-top: .7rem; 
+  min-height: 52px; 
+}
+
+.tag {
+  display: inline-block;
+  padding: .4rem .9rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 700;
+  background: #fdf0d5;
+  color: var(--coral-dark);
+}
+.tag-light { background: rgba(255,255,255,.2); color: #fff; }
+
+
+section { 
+  padding: 4rem 0; 
+}
+
+.section-heading { 
+  text-align: left; 
+  max-width: 600px; 
+  margin-bottom: 2rem; 
+}
+
+.section-heading h2 {
+   font-size: clamp(1.8rem, 4vw, 2.5rem); 
+   margin-top: .3rem;
+   }
+
+.section-heading {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.75rem;
+}
+
+
+.section-heading .eyebrow {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--verde);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+
+.section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.15;
+  margin: 0.25rem 0 0.75rem;
+}
+
+
+.section-heading .lead {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--verde);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+
+/*footer*/
+
+ .site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 2.5rem var(--page-gutter);
+  text-align: center;
+  background: var(--crema);
+  color: var(--verde);
+}
+
+
+.site-footer p {
+  font-size: 0.9rem;
+}
+
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--verde);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+
+.site-footer a:hover {
+  background-color: var(--verde);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+  /* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn.primary { 
+  background: var(--coral); 
+  color: rgb(0, 0, 0); 
+  box-shadow: 0 10px 24px rgba(189,84,63,.22); 
+}
+
+.btn.primary:hover { 
+  background: var(--cereza); 
+  transform: translateY(-2px); 
+}
+
+
+.btn.outline { 
+  background: var(--cereza); 
+  color: var(--cereza); border: 1px solid #e5b5a9;
+ }
+
+.btn.outline:hover { 
+  background: #171716; 
+  transform: translateY(-2px); 
+}
+
+
+.btn.card { 
+  border: 1px solid #c85e5e; 
+  background: var(--amarillo); 
+  color: var(--coral-dark); 
+  width: 100%; margin-top: 1rem; 
+}
+
+.btn.card:hover { 
+  background: var(--coral); 
+  color: #fff; 
+}
+
+
+.btn.butter { 
+  background: var(--butter); 
+  color: #670707;
+ }
+
+.btn.butter:hover { 
+  background: var(--cereza); 
+}
+
+
+.btn.whatsapp { 
+  background: var(--sage-dark); 
+  color: rgb(71, 2, 2); 
+}
+
+
+button:focus-visible, a:focus-visible { 
+  outline: 3px solid #510202; 
+  outline-offset: 3px; 
+}
