@@ -165,11 +165,11 @@
           <article class="product-card reveal">
             <img src="img/MERCH 8.jpeg" alt="DESCRIPCIÓN">
             <div class="product-body">
-              <span class="tag">Producto mas vendido</span>
+              <span class="tag">Kpop Box</span>
               <h3>Caja kpop box</h3>
               <p class="price">$120-180 MXN</p>
               <p class="description">Una Cherry Kpop selection box para regalar cariño en cualquier ocasión.</p>
-              <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
+              <button type="button" class="btn card" onclick="openModal('modal-Kpop Box')">Conoce tu caja</button>
             </div>
           </article>
 
@@ -182,7 +182,7 @@
               <h3>Holders perzonalizadas</h3>
               <p class="price">$25-90 MXN</p>
               <p class="description">Ideales para coleccionistas de Enhypen y otros grupos.</p>
-              <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
+              <button type="button" class="btn card" onclick="openModal('modal-Holders')">Conoce tu caja</button>
             </div>
           </article>
 
@@ -199,6 +199,48 @@
               <button type="button" class="btn card" onclick="openModal('modal-caja')">Conoce tu caja</button>
             </div>
           </article>
+
+          <!-- SERVICIO 4- TARJETA-->
+
+          <article class="product-card reveal">
+            <img src="img/MERCH 15.jpeg" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag"> Llaveros Personalizados </span>
+              <h3>Llaveros</h3>
+              <p class="price">$45-85 MXN.</p>
+              <p class="description"> Con iniciales, cuentas, dijes y colores personalizados..</p>
+              <button type="button" class="btn card" onclick="openModal('modal-Llaveros')">Conoce tu caja</button>
+            </div>
+          </article>
+
+          <!-- SERVICIO 5- TARJETA-->
+
+
+          <article class="product-card reveal">
+            <img src="img/FUNDA PARA LIBROS.jpeg" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag"> Fundas para Libros </span>
+              <h3>Fundas</h3>
+              <p class="price">$100-180 MXN.</p>
+              <p class="description"> Para proteger libros en mochilas y bolsos. Puedes ofrecer diferentes tamaños y estampados.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-Fundas')">Conoce tu caja</button>
+            </div>
+          </article>
+
+          <!-- SERVICIO 6- TARJETA-->
+
+            <article class="product-card reveal">
+            <img src="img/Kit box surprise.png" alt="DESCRIPCIÓN">
+            <div class="product-body">
+              <span class="tag"> Kit box surprise </span>
+              <h3>kit de sorpresa</h3>
+              <p class="price">$80-120 MXN.</p>
+              <p class="description"> Una cajita en donde probaras tu suerte, escogen un numero del 1-10 y veamos que te sale.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-Fundas')">Conoce tu caja</button>
+            </div>
+          </article>
+
+
 
 
 
@@ -337,9 +379,10 @@
 
         <aside class="contact-info" aria-label="Datos de contacto">
           <ul>
-            <li><i data-lucide="instagram"></i> <a href="https://www.instagram.com/cherrychapter.store?knvt=MWhxbTJwb2Y4c3liNQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">@cherrychapter.store</a></li>
+            <li><i data-lucide="instagram"></i> <a href="https://www.instagram.com/cherrychapter.store?knvt=MWhxbTJwb2Y4c3liNQ%3D%3D&utm_source=qr"target="_blank" rel="noopener noreferrer">@cherrychapter.store</a></li>
             <li><i data-lucide="mail"></i> <a href="mailto:cherryyyychapterins@gmail.com">cherry@chapter.mx</a></li>
-            <li><i data-lucide="clock-3"></i> Lunes a sábado, 10:00 a 19:00</li>
+             <li><i data-lucide="map"></i> <a href="https://maps.app.goo.gl/CeZ3vD4T9jwyt3dd8">Zona Esmeralda</a></li>
+            <li><i data-lucide="clock-3"></i> Lunes a sábado, 10:00 a 8:00</li>
           </ul>
         </aside>
       </div>
@@ -352,6 +395,51 @@
     <p>© <span id="current-year"></span> CHERRY CHAPTER. Todos los derechos reservados.</p>
     <a href="#inicio">Volver arriba ↑</a>
   </footer>
+
+  <!-- MODAL PARA LOS PRODUCTOS O SERVICIOS, ETC-->
+   <div id="modal-kpop box" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-Kpop box-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/MERCH 8.jpeg" alt="Imagen kpop box.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-kpop box')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-kpop box-title">Caja Kpop Box</h2>
+        <p class="price">$120-180 MXN</p>
+        <p>Una Cherry Kpop selection box para regalar cariño en cualquier ocasión..</p>
+        <h3>Personalízalo con:</h3>
+        <ul>
+          <li>Caja con tus accesorios</li>
+          <li>Selección de tu preferencia</li>
+          <li>Color de listón</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir la Caja Kpop box. ¿Me ayudan a personalizarla?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PARA LA TARJETA 2-->
+   <div id="modal-Holders" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-Holders-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/MERCH 12.jpeg" alt="Imagen holders.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-Holders')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-Holders-title">Holders Personalizadas</h2>
+        <p class="price">$25-90 MXN</p>
+        <p>Ideales para coleccionistas de Enhypen y otros grupos..</p>
+        <h3>Personalízalo con:</h3>
+        <ul>
+          <li>Escoge a tu bias</li>
+          <li>Selección de photocard de tu preferencia</li>
+          <li>¡Pidelo ya!</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir Una Holder Personalizada. ¿Me ayudan a personalizarla?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
 
   <script src="js/script.js"></script>
 

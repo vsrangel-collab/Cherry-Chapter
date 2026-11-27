@@ -145,3 +145,28 @@ videoCards.forEach((card) => {
     }
   });
 });
+
+//Abre el modal de un producto y bloquea el scroll del fondo.//
+
+let lastFocusedElement = null; // elemento con foco antes de abrir un modal
+let currentSlide = 0;
+function openModal(id) {
+  lastFocusedElement = document.activeElement;
+  const modal = document.getElementById(id);
+  modal.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+  const closeButton = modal.querySelector(".modal-close");
+  if (closeButton) closeButton.focus();
+}
+
+
+/**
+ * Cierra el modal de un producto y devuelve el foco al elemento anterior.
+ */
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  modal.classList.remove("is-open");
+  document.body.style.overflow = "";
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
